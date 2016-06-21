@@ -118,6 +118,8 @@ img {
 .date {
   font-style: italic;
   color: $gray;
+  font-size: 14px;
+  margin-top: 25px;
 }
 
 // Specify the color of the selection
@@ -165,8 +167,8 @@ img {
 
 .site-avatar {
   float: left;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   margin-right: 15px;
 
   @include mobile {
@@ -197,6 +199,7 @@ img {
   font-family: $helveticaNeue;
   font-weight: 300;
   font-size: 28px;
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -269,12 +272,20 @@ nav {
     text-transform: uppercase;
     font-size: 15px;
   }
+
+  .entry {
+    font-size: 16px;
+  }
+
+  img {
+    width: 100%
+  }
 }
 
 .wrapper-footer {
   margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  //border-top: 1px solid #ddd;
+  //border-bottom: 1px solid #ddd;
   background-color: $lightGray;
 }
 
