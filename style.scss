@@ -257,7 +257,7 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-left: 3px solid $gray;
     padding: 0.1em 1em;
     color: $gray;
     font-size: 18px;
@@ -292,6 +292,26 @@ nav {
 footer {
   padding: 20px 0;
   text-align: center;
+}
+
+//Page Navigation functionality (adapted from http://david.elbe.me/jekyll/2015/06/20/how-to-link-to-next-and-previous-post-with-jekyll.html)
+.PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  //width: 50%;
+  float: right;
+  margin: 1.5em 0;
+}
+
+.PageNavigation .next {
+  display: block;
+  float: left;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
