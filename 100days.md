@@ -11,3 +11,4 @@ Below is a full list of the prompts I wrote about over 100 days, along with link
 3. [on adulthood]({% post_url 2016-6-19-day3 %})
 4. [on social media]({% post_url 2016-6-20-day4 %})
 5. [on my relationship with my (smart)phone]({% post_url 2016-6-21-day5 %})
+6. [on being alone]({% post_url 2016-6-22-day6 %})
