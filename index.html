@@ -12,7 +12,13 @@ layout: default
         {{ post.content | truncatewords:120 }}
       </div>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      <!--Only display "READ MORE" if post contains more than 120 words -->
+      {% capture words %}
+        {{ post.content | number_of_words | minus: 120 }}
+      {% endcapture %}
+      {% unless words contains "-" %}
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      {% endunless %}
     </article>
   {% endfor %}
 </div>
