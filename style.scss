@@ -5,8 +5,8 @@
 // IMPORTS
 //
 
-@import "reset";
-@import "variables";
+@import "_reset";
+@import "_variables";
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -196,7 +196,7 @@ img {
   margin: 0;
   color: $darkerGray;
   cursor: pointer;
-  font-family: "Slabo 27px";
+  font-family: $slabo;
   font-weight: 300;
   font-size: 28px;
   text-transform: lowercase;
