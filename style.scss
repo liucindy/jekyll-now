@@ -19,7 +19,7 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $helvetica;
+  font: 18px/1.4 $sourceSansPro;
   color: $darkGray;
 }
 
@@ -31,8 +31,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
-  color: $darkerGray;
+  font-family: $slabo;
+  color: $turquoise;
   font-weight: bold;
 
   line-height: 1.7;
@@ -69,11 +69,11 @@ p {
 }
 
 a {
-  color: $blue;
+  color: $turquoise;
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    color: $darkGray;
   }
 }
 
@@ -194,19 +194,20 @@ img {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: $darkerGray;
   cursor: pointer;
-  font-family: $helveticaNeue;
+  font-family: $slabo;
   font-weight: 300;
   font-size: 28px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   letter-spacing: 1px;
 }
 
 .site-description {
   margin: -5px 0 0 0;
-  color: $gray;
+  color: $darkGray;
   font-size: 16px;
+  font-family: $slabo;
 
   @include mobile {
     margin: 3px 0;
@@ -216,8 +217,9 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
+  font-family: $slabo;
   font-size: 18px;
+  color: $darkGray;
 
   @include mobile {
     float: none;
@@ -231,7 +233,7 @@ nav {
     color: $darkGray;
     text-align: right;
     font-weight: 300;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 
     @include mobile {
       margin: 0 10px;
@@ -318,6 +320,7 @@ footer {
   //width: 50%;
   float: left;
   margin: 1.5em 0;
+  font-family: $slabo
 }
 
 .PageNavigation span {

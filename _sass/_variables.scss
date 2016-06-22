@@ -5,6 +5,7 @@
 
 // Colors
 $blue: #4183C4;
+$turquoise: #58b9a9;
 
 // Grays
 $black: #000;
@@ -13,12 +14,16 @@ $darkGray: #333;
 $gray: #666;
 $lightGray: #eee;
 $white: #fff;
-$turquoise: #75b5aa;
+
 
 // Font stacks
+@import url(http://fonts.googleapis.com/css?family=Lato|Slabo+27px|Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic);
 $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
+$lato: 'Lato', sans-serif;
+$slabo: 'Slabo 27px', serif;
+$sourceSansPro: 'Source Sans Pro', sans-serif;
 
 // Mobile breakpoints
 @mixin mobile {
