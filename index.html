@@ -12,7 +12,7 @@ layout: default
         {{ post.content | truncatewords:120 }}
       </div>
 
-      <!--Only display "READ MORE" if post contains more than 120 words -->
+      <!--Only display "READ MORE" if post contains more than 120 words (adapted from https://sacha.me/articles/jekyll-word-counts/)-->
       {% capture words %}
         {{ post.content | number_of_words | minus: 120 }}
       {% endcapture %}
