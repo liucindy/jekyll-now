@@ -19,7 +19,7 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $sourceSansPro;
+  font: 16px $sourceSansPro;
   color: $darkGray;
 }
 
@@ -262,7 +262,7 @@ nav {
     border-left: 3px solid $gray;
     padding: 0.1em 1em;
     color: $gray;
-    font-size: 18px;
+    font-size: 17px;
     font-style: italic;
   }
 
@@ -277,6 +277,7 @@ nav {
 
   .entry {
     font-size: 16px;
+    font-family: $sourceSansPro;
   }
 
   img {
@@ -320,7 +321,7 @@ footer {
   //width: 50%;
   float: left;
   margin: 1.5em 0;
-  font-family: $slabo
+  text-transform: uppercase;
 }
 
 .PageNavigation span {
@@ -328,7 +329,7 @@ footer {
   //width: 50%;
   float: left;
   margin: 1.5em 0;
-  font-family: $slabo;
+  text-transform: uppercase;
 }
 
 .PageNavigation .next {
