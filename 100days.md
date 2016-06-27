@@ -15,3 +15,4 @@ Below is a full list of the prompts I wrote about over 100 days, along with link
 5. [on my relationship with my (smart)phone]({% post_url 2016-6-21-day5 %})
 6. [on being alone]({% post_url 2016-6-22-day6 %})
 7. [on a book you re-read]({% post_url 2016-6-23-day7 %})
+8. [on memories of high school]({% post_url 2016-6-24-day8 %})
