@@ -1,40 +1,51 @@
 ---
 ---
-
-//
-// IMPORTS
-//
-
+/******************************************************************************/
+/* IMPORTS                                                                    */
+/******************************************************************************/
 @import "reset";
 @import "variables";
-// Syntax highlighting @import is at the bottom of this file
+@import "highlights";  /* Syntax highlighting import */
+@import "svg-icons";   /* Social media icons import */
 
-/**************/
-/* BASE RULES */
-/**************/
+/* CONTENTS
+* Base rules
+* Wrapper
+* Container
+* Masthead
+* Sidebar
+* Slide effect
+* Posts and pages
+* Pagination
+* Footer
+* (optional) Reverse layout
+* (optional) Color themes
+* (optional) Overlay sidebar
+* Miscellaneous
+*/
+
+/******************************************************************************/
+/* BASE RULES                                                                 */
+/******************************************************************************/
 
 html {
   font-size: 100%;
+  overflow-x: hidden;
 }
 
 body {
 	background: $white;
   font: 16px $sourceSansPro;
   color: $darkGray;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 0 10px;
-  width: 100%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Slabo 27px", sans-serif;
-  color: $turquoise;
-  font-weight: bold;
-
+  font: {
+    family: "Slabo 27px", sans-serif;
+    color: $turquoise;
+    weight: bold;
+  }
   line-height: 1.7;
   margin: 1em 0 15px;
   padding: 0;
@@ -110,54 +121,51 @@ img {
   max-width: 100%;
 }
 
-// Fixes images in popup boxes from Google Translate
-.gmnoprint img {
-  max-width: none;
+/******************************************************************************/
+/* WRAPPER: the wrapper is used to position site content when the sidebar is
+   toggled. We use an outer wrap to position the sidebar without interferring
+   with the regular page content.
+/******************************************************************************/
+
+.wrap {
+  position: relative;
+  width: 100%;
 }
 
-.date {
-  font-style: italic;
-  color: $gray;
-  font-size: 14px;
-  margin-top: 25px;
+/******************************************************************************/
+/* CONTAINER                                                                  */
+/******************************************************************************/
+
+.container {
+  margin: 0 auto;
+  max-width: 740px;
+  padding: 0 10px;
+  width: 100%;
 }
-
-// Specify the color of the selection
-::-moz-selection {
-  color: $black;
-  background: $lightGray;
+/*@media (min-width: 38em) {
+  .container {
+    max-width: 32rem;
+  }
 }
-::selection {
-  color: $black;
-  background: $lightGray;
-}
+@media (min-width: 56em) {
+  .container {
+    max-width: 38rem;
+  }
+}*/
 
-// Nicolas Gallagher's micro clearfix hack
-// http://nicolasgallagher.com/micro-clearfix-hack/
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
+/******************************************************************************/
+/* MASTHEAD: small header for content at top of page                          */
+/******************************************************************************/
 
-.clearfix:after {
-    clear: both;
-}
-
-/*********************/
-/* LAYOUT / SECTIONS */
-/*********************/
-
-//
-// .masthead
-//
-
+/* Remnant of Jekyll-Now
 .wrapper-masthead {
   margin-bottom: 50px;
-}
+}*/
 
 .masthead {
-  padding: 20px 0;
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
   border-bottom: 1px solid $lightGray;
 
   @include mobile {
@@ -165,61 +173,95 @@ img {
   }
 }
 
-.site-avatar {
-  float: left;
-  width: 80px;
-  height: 80px;
-  margin-right: 15px;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-
-  img {
-    border-radius: 30%;
-  }
-}
-
-.site-info {
-  float: left;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-}
-
-.site-name {
-  margin: 0;
+.site-title {
+  margin-top: 0;
+  margin-bottom: 0;
   color: $darkerGray;
   cursor: pointer;
   font-family: $slabo;
-  font-weight: 300;
-  font-size: 28px;
+  font-weight: 700;
   text-transform: lowercase;
-  letter-spacing: 1px;
+  font-size: 28px;
+  letter-spacing: 0.3px;
+}
+.site-title a {
+  color: $darkerGray;
+}
+.site-title small {
+  font-size: 55%;
+  font-weight: 200;
+  color: #c0c0c0;
+  letter-spacing: 5;
+  padding-left: 0.3em;
 }
 
-.site-description {
-  margin: -5px 0 0 0;
-  color: $darkGray;
-  font-size: 16px;
-  font-family: $slabo;
-
-  @include mobile {
-    margin: 3px 0;
+@media (max-width: 48em) {
+  .site-title {
+    text-align: center;
+  }
+  .site-title small {
+    display: none;
   }
 }
 
-nav {
-  float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+/******************************************************************************/
+/* SIDEBAR: the sidebar is the drawer, the item we are toggling with our handy
+   hamburger button in the corner of the page. This particular sidebar
+   implementation was inspired by Chris Coyier's "Offcanvas Menu with CSS
+   Target" article, and the checkbox variation from the comments by a reader.
+   It modifies both implementations to continue using the checkbox (no change
+   in URL means no polluted browser history), but this uses `position` for the
+   menu to avoid some potential content reflow issues. Source:
+   http://css-tricks.com/off-canvas-menu-with-css-target/#comment-207504
+/******************************************************************************/
+
+/* Style and "hide" the sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -14rem;
+  width: 14rem;
+  visibility: hidden;
+  overflow-y: auto;
   font-family: $slabo;
-  font-size: 18px;
-  color: $darkGray;
+  font-size: 12px;
+  color: rgba(255,255,255,.6);
+  background-color: #202020;
+  -webkit-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+}
+
+.sidebar img {
+  display: block;
+  width: 153px;
+  height: 150px;
+  margin: {
+    top: 60px;
+    left: auto;
+    right: auto;
+  }
+  border-radius: 50%;
+  @include mobile {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 30em) {
+  .sidebar {
+    font-size: .75rem; /* 14px */
+  }
+}
+
+/* Controls sidebar navigation panel. */
+.sidebar nav {
+  float: right;
+  margin-top: 20px;
+  font-family: $slabo;
+  font-size: 1.4em;
+  color: #fff;
 
   @include mobile {
     float: none;
@@ -230,25 +272,170 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 0.5px;
+    color: #fff;
 
     @include mobile {
       margin: 0 10px;
-      color: $blue;
+      color: $darkGray;
     }
   }
 }
 
-//
-// .main
-//
+.sidebar-nav-item {
+  text-transform: lowercase;
+  font-size: 0.9em;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+.sidebar-nav-item.active,
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  text-decoration: none;
+  color: $darkGray;
+  border-color: transparent;
+}
+
+.sidebar-icons {
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  float: right;
+  &:hover, &:active {
+    color: $darkGray;
+  }
+}
+
+@media (min-width: 48em) {
+  .sidebar-item {
+    padding: 1.5rem;
+  }
+  .sidebar-nav-item {
+    padding-left:  1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
+.sidebar-checkbox {
+  position: absolute;
+  opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+// Specify the color of the selection
+::-moz-selection {
+  color: $black;
+  background: $lightGray;
+}
+
+::selection {
+  color: $black;
+  background: $lightGray;
+}
+
+/* Style the `label` that we use to target the `.sidebar-checkbox` */
+.sidebar-toggle {
+  position: absolute;
+  top:  .8rem;
+  left: 1rem;
+  display: block;
+  padding: .25rem .75rem;
+  color: #805050;
+  background-color: #fff;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.sidebar-toggle:before {
+  display: inline-block;
+  width: 1rem;
+  height: .75rem;
+  content: "";
+  background-image: -webkit-linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
+  background-image:    -moz-linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
+  background-image:     -ms-linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
+  background-image:         linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
+}
+
+.sidebar-toggle:active,
+#sidebar-checkbox:focus ~ .sidebar-toggle,
+#sidebar-checkbox:checked ~ .sidebar-toggle {
+  color: #555;
+  background-color: #fff;
+}
+
+.sidebar-toggle:active:before,
+#sidebar-checkbox:focus ~ .sidebar-toggle:before,
+#sidebar-checkbox:checked ~ .sidebar-toggle:before {
+  background-image: -webkit-linear-gradient(to bottom, #fff, #fff 20%, #75b5aa 20%, #75b5aa 40%, #fff 40%, #fff 60%, #75b5aa 60%, #75b5aa 80%, #fff 80%, #fff 100%);
+  background-image:    -moz-linear-gradient(to bottom, #fff, #fff 20%, #75b5aa 20%, #75b5aa 40%, #fff 40%, #fff 60%, #75b5aa 60%, #75b5aa 80%, #fff 80%, #fff 100%);
+  background-image:     -ms-linear-gradient(to bottom, #fff, #fff 20%, #75b5aa 20%, #75b5aa 40%, #fff 40%, #fff 60%, #75b5aa 60%, #75b5aa 80%, #fff 80%, #fff 100%);
+  background-image:         linear-gradient(to bottom, #fff, #fff 20%, #75b5aa 20%, #75b5aa 40%, #fff 40%, #fff 60%, #75b5aa 60%, #75b5aa 80%, #fff 80%, #fff 100%);
+}
+
+@media (min-width: 30.1em) {
+  .sidebar-toggle {
+    position: fixed;
+  }
+}
+
+@media print {
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
+/******************************************************************************/
+/* SLIDE EFFECT: Handle the sliding effects of the sidebar and content in one
+   spot, seperate from the default styles. As an a heads up, we don't use
+   `transform: translate3d()` here because when mixed with `position: fixed;`
+   for the sidebar toggle, it creates a new containing block. Put simply, the
+   fixed sidebar toggle behaves like`position: absolute;` when transformed.
+   Read more about it at http://meyerweb.com/eric/thoughts/2011/09/12/.
+/******************************************************************************/
+
+.wrap,
+.sidebar,
+.sidebar-toggle {
+  -webkit-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.wrap,
+.sidebar-toggle {
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+          transition: transform .3s ease-in-out;
+}
+
+#sidebar-checkbox:checked + .sidebar {
+  z-index: 10;
+  visibility: visible;
+}
+#sidebar-checkbox:checked ~ .sidebar,
+#sidebar-checkbox:checked ~ .wrap,
+#sidebar-checkbox:checked ~ .sidebar-toggle {
+  -webkit-transform: translateX(14rem);
+      -ms-transform: translateX(14rem);
+          transform: translateX(14rem);
+}
+
+/******************************************************************************/
+/* POSTS AND PAGES                                                            */
+/******************************************************************************/
 
 .posts > .post {
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
+
+  a {
+    &:hover, &:active {
+      color: $darkGray;
+    }
+  }
 }
 
 .posts > .post:last-child {
@@ -257,6 +444,9 @@ nav {
 }
 
 .post {
+  h1 {
+    color: $turquoise;
+  }
   blockquote {
     margin: 1.8em .8em;
     border-left: 3px solid $gray;
@@ -285,30 +475,40 @@ nav {
   }
 }
 
-.wrapper-footer {
-  margin-top: 50px;
-  //border-top: 1px solid #ddd;
-  //border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+.date {
+  font-style: italic;
+  color: $gray;
+  font-size: 14px;
+  margin-top: 25px;
 }
 
-footer {
-  padding: 20px 0;
-  text-align: center;
-}
+/******************************************************************************/
+/* PAGINATION                                                                 */
+/******************************************************************************/
 
+/* For moving between pages. */
 .pagination {
   margin-top: 1.2em;
   text-transform: uppercase;
   font-size: 15px;
   font-weight: bold;
-
-  .next {
-    float: right;
-  }
 }
 
-//Page navigation functionality (adapted from http://david.elbe.me/jekyll/2015/06/20/how-to-link-to-next-and-previous-post-with-jekyll.html)
+.pagination .previous {
+    &:hover, &:active {
+      color: $darkGray;
+    }
+}
+
+.pagination .next {
+    float: right;
+    &:hover, &:active {
+      color: $darkGray;
+    }
+}
+
+/* For moving between posts. Source:
+http://david.elbe.me/jekyll/2015/06/20/how-to-link-to-next-and-previous-post-with-jekyll.html) */
 .PageNavigation {
   font-size: 14px;
   display: block;
@@ -318,7 +518,6 @@ footer {
 
 .PageNavigation a {
   display: block;
-  //width: 50%;
   float: left;
   margin: 1.5em 0;
   text-transform: uppercase;
@@ -326,18 +525,208 @@ footer {
 
 .PageNavigation span {
   display: block;
-  //width: 50%;
   float: left;
   margin: 1.5em 0;
   text-transform: uppercase;
 }
 
+.PageNavigation .prev {
+  display: block;
+  float: left;
+
+  &:hover, &:active {
+    color: $darkGray;
+  }
+}
+
 .PageNavigation .next {
   display: block;
   float: right;
+
+  &:hover, &:active {
+    color: $darkGray;
+  }
 }
 
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
-@import "svg-icons";
+/******************************************************************************/
+/* FOOTER (from Jekyll-Now)                                                   */
+/******************************************************************************/
+
+.wrapper-footer {
+  margin-top: 50px;
+  //border-top: 1px solid #ddd;
+  //border-bottom: 1px solid #ddd;
+  //background-color: $lightGray;
+}
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+}
+
+/******************************************************************************/
+/* (optional) REVERSE LAYOUT: flip the orientation of the page by placing the
+   `.sidebar`and sidebar toggle on the right side.
+/******************************************************************************/
+
+.layout-reverse .sidebar {
+  left: auto;
+  right: -14rem;
+}
+.layout-reverse .sidebar-toggle {
+  left: auto;
+  right: 1rem;
+}
+
+.layout-reverse #sidebar-checkbox:checked ~ .sidebar,
+.layout-reverse #sidebar-checkbox:checked ~ .wrap,
+.layout-reverse #sidebar-checkbox:checked ~ .sidebar-toggle {
+  -webkit-transform: translateX(-14rem);
+      -ms-transform: translateX(-14rem);
+          transform: translateX(-14rem);
+}
+
+/******************************************************************************/
+/* (optional) COLOR THEMES: Apply custom color schemes by adding the appropriate
+   class to the `body`. Based on colors from Base16:
+   http://chriskempson.github.io/base16/#default.
+/******************************************************************************/
+
+/* Red */
+.theme-base-08 .sidebar,
+.theme-base-08 .sidebar-toggle:active,
+.theme-base-08 #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #ac4142;
+}
+.theme-base-08 .container a,
+.theme-base-08 .sidebar-toggle,
+.theme-base-08 .related-posts li a:hover {
+  color: #ac4142;
+}
+
+/* Orange */
+.theme-base-09 .sidebar,
+.theme-base-09 .sidebar-toggle:active,
+.theme-base-09 #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #d28445;
+}
+.theme-base-09 .container a,
+.theme-base-09 .sidebar-toggle,
+.theme-base-09 .related-posts li a:hover {
+  color: #d28445;
+}
+
+/* Yellow */
+.theme-base-0a .sidebar,
+.theme-base-0a .sidebar-toggle:active,
+.theme-base-0a #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #f4bf75;
+}
+.theme-base-0a .container a,
+.theme-base-0a .sidebar-toggle,
+.theme-base-0a .related-posts li a:hover {
+  color: #f4bf75;
+}
+
+/* Green */
+.theme-base-0b .sidebar,
+.theme-base-0b .sidebar-toggle:active,
+.theme-base-0b #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #90a959;
+}
+.theme-base-0b .container a,
+.theme-base-0b .sidebar-toggle,
+.theme-base-0b .related-posts li a:hover {
+  color: #90a959;
+}
+
+/* Cyan */
+.theme-base-0c .sidebar,
+.theme-base-0c .sidebar-toggle:active,
+.theme-base-0c #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #75b5aa;  //#58b9a9 ;
+}
+.theme-base-0c .container a,
+.theme-base-0c .sidebar-toggle,
+.theme-base-0c .related-posts li a:hover {
+  color: #75b5aa; //#5869a9 ;
+}
+
+/* Blue */
+.theme-base-0d .sidebar,
+.theme-base-0d .sidebar-toggle:active,
+.theme-base-0d #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #6a9fb5;
+}
+.theme-base-0d .container a,
+.theme-base-0d .sidebar-toggle,
+.theme-base-0d .related-posts li a:hover {
+  color: #6a9fb5;
+}
+
+/* Magenta */
+.theme-base-0e .sidebar,
+.theme-base-0e .sidebar-toggle:active,
+.theme-base-0e #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #aa759f;
+}
+.theme-base-0e .container a,
+.theme-base-0e .sidebar-toggle,
+.theme-base-0e .related-posts li a:hover {
+  color: #aa759f;
+}
+
+/* Brown */
+.theme-base-0f .sidebar,
+.theme-base-0f .sidebar-toggle:active,
+.theme-base-0f #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #8f5536;
+}
+.theme-base-0f .container a,
+.theme-base-0f .sidebar-toggle,
+.theme-base-0f .related-posts li a:hover {
+  color: #8f5536;
+}
+
+/******************************************************************************/
+/* (optional) OVERLAY SIDEBAR: make the sidebar content overlay the viewport
+  content instead of pushing it aside when toggled.
+/******************************************************************************/
+
+.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar-toggle {
+  box-shadow: 0 0 0 .25rem #fff;
+}
+.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
+  box-shadow: .25rem 0 .5rem rgba(0,0,0,.1);
+}
+
+/* Only one tweak for a reverse layout */
+.layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
+  box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
+}
+
+/******************************************************************************/
+/* MISCELLANEOUS                                                              */
+/******************************************************************************/
+
+// Fixes images in popup boxes from Google Translate
+.gmnoprint img {
+  max-width: none;
+}
+
+// Nicolas Gallagher's micro clearfix hack
+// http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}

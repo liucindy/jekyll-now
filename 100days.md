@@ -4,8 +4,7 @@ title: 100daysofwriting
 permalink: /100days/
 ---
 
-Below is a full list of the prompts I wrote about over 100 days, along with links to each of the posts:
-
+This summer, I was inspired to write in my journal for 100 consecutive days. Nothing fancy, just some day-to-day thoughts that I would force myself to put down on paper. Below is a full list of the prompts I wrote about, along with links to each of the posts:
 
 
 1. [on why I want to write]({% post_url 2016-6-17-day1 %})
