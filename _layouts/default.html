@@ -21,17 +21,14 @@
         </div>
       </div>
 
-      <div class="container content">
+      <div class="container">
         {{ content }}
       </div>
 
       <div class="wrapper-footer">
         <div class="container">
           <footer class="footer">
-              <p>
-                &copy; {{ site.time | date: '%Y' }} Cindy Liu
-              </p>
-            <!--{% include svg-icons.html %}-->
+            
           </footer>
         </div>
       </div>
@@ -57,9 +54,6 @@
         }, false);
       })(document);
     </script>
-
-
-
     {% include analytics.html %}
   </body>
 
