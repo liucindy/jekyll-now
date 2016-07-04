@@ -276,7 +276,7 @@ img {
   color: #fff;
 
   @include mobile {
-    float: none;
+    float: right;
     margin-top: 9px;
     display: block;
     font-size: 16px;
@@ -291,7 +291,6 @@ img {
 
     @include mobile {
       margin: 0 10px;
-      //color: $darkGray;
     }
   }
 }
@@ -314,6 +313,10 @@ a.sidebar-nav-item:focus {
   padding: 0.5rem 1rem;
   display: inline-block;
   float: right;
+
+  @include mobile {
+    float: right;
+  }
 }
 
 .sidebar-item {
