@@ -254,7 +254,7 @@ img {
     float: none;
     display: block;
     margin: {
-      top: 20px;
+      top: 40px;
       left: auto;
       right: auto;
     }
@@ -291,7 +291,7 @@ img {
 
     @include mobile {
       margin: 0 10px;
-      color: $darkGray;
+      //color: $darkGray;
     }
   }
 }
