@@ -1,0 +1,17 @@
+---
+layout: default
+images:
+  -image_path: /images/hong-kong/central-street.jpg
+  title: Central Street
+  -image_path: /images/hong-kong/mongkok-night.jpg
+  title: Mongkok Night
+permalink: /photography/
+---
+
+<ul class="photo-gallery">
+  {% for image in page.images %}
+    <li>
+      <img src="/images/hong-kong/central-street.jpg">
+    </li>
+  {% endfor %}
+</ul>

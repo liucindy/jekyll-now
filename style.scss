@@ -24,6 +24,21 @@
 * Miscellaneous
 */
 
+.photo-gallery, .photo-gallery li {
+	list-style: none;
+	padding: 0;
+}
+
+.photo-gallery li {
+	display: inline-block;
+	width: 33%;
+}
+
+.photo-gallery li img {
+	width: 100%;
+}
+
+
 /******************************************************************************/
 /* BASE RULES                                                                 */
 /******************************************************************************/
@@ -346,7 +361,7 @@ a.sidebar-nav-item:focus {
 /* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
 .sidebar-checkbox {
   position: absolute;
-  opacity: 1;
+  opacity: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -397,10 +412,10 @@ a.sidebar-nav-item:focus {
 .sidebar-toggle:active:before,
 #sidebar-checkbox:focus ~ .sidebar-toggle:before,
 #sidebar-checkbox:checked ~ .sidebar-toggle:before {
-  background-image: -webkit-linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
-  background-image:    -moz-linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
-  background-image:     -ms-linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
-  background-image:         linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
+  background-image: -webkit-linear-gradient(to bottom, #75b5aa, #75b5aa 20%, #555 20%, #555 40%, #75b5aa 40%, #75b5aa 60%, #555 60%, #555 80%, #75b5aa 80%, #75b5aa 100%);
+  background-image:    -moz-linear-gradient(to bottom, #75b5aa, #75b5aa 20%, #555 20%, #555 40%, #75b5aa 40%, #75b5aa 60%, #555 60%, #555 80%, #75b5aa 80%, #75b5aa 100%);
+  background-image:     -ms-linear-gradient(to bottom, #75b5aa, #75b5aa 20%, #555 20%, #555 40%, #75b5aa 40%, #75b5aa 60%, #555 60%, #555 80%, #75b5aa 80%, #75b5aa 100%);
+  background-image:         linear-gradient(to bottom, #75b5aa, #75b5aa 20%, #555 20%, #555 40%, #75b5aa 40%, #75b5aa 60%, #555 60%, #555 80%, #75b5aa 80%, #75b5aa 100%);
 }
 
 @media (min-width: 30.1em) {
