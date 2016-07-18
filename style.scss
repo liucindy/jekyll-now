@@ -368,7 +368,7 @@ a.sidebar-nav-item:focus {
 }
 
 // Specify the color of the selection
-::-moz-selection {
+/*::-moz-selection {
   color: $black;
   background: $lightGray;
 }
@@ -376,7 +376,7 @@ a.sidebar-nav-item:focus {
 ::selection {
   color: $black;
   background: $lightGray;
-}
+}*/
 
 /* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
@@ -410,12 +410,12 @@ a.sidebar-nav-item:focus {
 }
 
 .sidebar-toggle:active:before,
-#sidebar-checkbox:focus ~ .sidebar-toggle:before,
+/*#sidebar-checkbox:focus ~ .sidebar-toggle:before,*/
 #sidebar-checkbox:checked ~ .sidebar-toggle:before {
-  background-image: -webkit-linear-gradient(to bottom, #75b5aa, #75b5aa 20%, #555 20%, #555 40%, #75b5aa 40%, #75b5aa 60%, #555 60%, #555 80%, #75b5aa 80%, #75b5aa 100%);
-  background-image:    -moz-linear-gradient(to bottom, #75b5aa, #75b5aa 20%, #555 20%, #555 40%, #75b5aa 40%, #75b5aa 60%, #555 60%, #555 80%, #75b5aa 80%, #75b5aa 100%);
-  background-image:     -ms-linear-gradient(to bottom, #75b5aa, #75b5aa 20%, #555 20%, #555 40%, #75b5aa 40%, #75b5aa 60%, #555 60%, #555 80%, #75b5aa 80%, #75b5aa 100%);
-  background-image:         linear-gradient(to bottom, #75b5aa, #75b5aa 20%, #555 20%, #555 40%, #75b5aa 40%, #75b5aa 60%, #555 60%, #555 80%, #75b5aa 80%, #75b5aa 100%);
+  background-image: -webkit-linear-gradient(to bottom, #fff, #fff 20%, #75b5aa 20%, #75b5aa 40%, #fff 40%, #fff 60%, #75b5aa 60%, #75b5aa 80%, #fff 80%, #fff 100%);
+  background-image:    -moz-linear-gradient(to bottom, #fff, #fff 20%, #75b5aa 20%, #75b5aa 40%, #fff 40%, #fff 60%, #75b5aa 60%, #75b5aa 80%, #fff 80%, #fff 100%);
+  background-image:     -ms-linear-gradient(to bottom, #fff, #fff 20%, #75b5aa 20%, #75b5aa 40%, #fff 40%, #fff 60%, #75b5aa 60%, #75b5aa 80%, #fff 80%, #fff 100%);
+  background-image:         linear-gradient(to bottom, #fff, #fff 20%, #75b5aa 20%, #75b5aa 40%, #fff 40%, #fff 60%, #75b5aa 60%, #75b5aa 80%, #fff 80%, #fff 100%);
 }
 
 @media (min-width: 30.1em) {
@@ -686,21 +686,21 @@ http://david.elbe.me/jekyll/2015/06/20/how-to-link-to-next-and-previous-post-wit
   background-color: #90a959;
 }
 .theme-base-0b .container a,
-.theme-base-0b .sidebar-toggle,
+/*.theme-base-0b .sidebar-toggle,*/
 .theme-base-0b .related-posts li a:hover {
   color: #90a959;
 }
 
 /* Cyan */
-.theme-base-0c .sidebar,
+.theme-base-0c .sidebar/*,
 .theme-base-0c .sidebar-toggle:active,
-.theme-base-0c #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #75b5aa;  //#58b9a9 ;
+.theme-base-0c #sidebar-checkbox:checked ~ .sidebar-toggle*/ {
+  background-color: #75b5aa;
 }
+
 .theme-base-0c .container a,
-.theme-base-0c .sidebar-toggle,
 .theme-base-0c .related-posts li a:hover {
-  color: #75b5aa; //#5869a9 ;
+  color: #75b5aa;
 }
 
 /* Blue */
