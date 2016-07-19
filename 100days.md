@@ -4,8 +4,13 @@ title: 100daysofwriting
 permalink: /100days/
 ---
 
-This summer, I was inspired to write in my journal for 100 consecutive days. Nothing fancy, just some day-to-day thoughts that I would force myself to put down on paper. Below is a full list of the prompts I wrote about, along with links to each of the posts:
+> ... [art] does have some extraordinary functions, some odd negotiating ability between people, including people who never meet and yet who infiltrate and enrich each other's lives. It does have a way of healing wounds, and better yet of making it apparent that not all wounds need healing and not all scars are ugly. The way I recovered a sense of wholeness was by handling the things that other people had made, slowly absorbing by way of this contact the fact that loneliness and longing do not mean one has failed, but simply that one is alive. (Olivia Laing)
 
+The start of the summer of 2016 was not an easy one for me. Throughout the pain and uncertainty, I found myself consistently turning to reading and writing, so in mid-June, I decided to start a personal project during which I would write in my journal for 100 consecutive days. The first ten days were excruciatingly difficult, but by the one-month mark, writing had become a sort of lifeline and something I could not live without.
+
+The posts on this blog are excerpts from my daily writings, either taken word-for-word or slightly edited for content. None of them are intended to be deep or profound, but my hope is that even just one line might resonate some reader out there, sort of as a way to give back to all the writers that pulled me out of my darkest moments, or helped me begin to understand myself and my place in this world.
+
+If you have any thoughts or feedback, please (please!) write to me. I would love to hear from you, whether or not we've ever met.
 
 1. [on why I want to write]({% post_url 2016-6-17-day1 %})
 2. [on my biggest fear]({% post_url 2016-6-18-day2 %})
