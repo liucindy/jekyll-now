@@ -14,7 +14,7 @@ footer-links:
   dribbble:
   email: cindyliu@princeton.edu
   facebook:
-  flickr: 125645735@N04
+  # flickr: 125645735@N04
   github: liucindy
   instagram:
   linkedin:
@@ -36,10 +36,10 @@ baseurl: ""
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
-disqus:
+disqus: liucindy
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
+google_analytics: UA-79603416-1
 
 # The release of Jekyll Now and Lanyon themes that I'm using
 version_jekyll_now: 1.2.0
