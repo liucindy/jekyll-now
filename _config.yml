@@ -7,7 +7,7 @@ description:                             # displayed in sidebar
 avatar: /images/back-pic.png            # displayed in sidebar
 url: http://liucindy.github.io           # used for Sitemap.xml and RSS feed
 permalink: /:title/
-paginate: 5
+paginate: 7
 
 # Footer (includes an icon in the footer for each username entered)
 footer-links:
