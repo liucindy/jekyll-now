@@ -4,7 +4,7 @@ title: 100daysofwriting
 permalink: /100days/
 ---
 
-The start of the summer of 2016 was not an easy one for me. Throughout the pain and uncertainty, I found myself consistently turning to reading and writing, so in mid-June, I decided to start a personal project during which I would write in my journal for 100 consecutive days. The first ten days were excruciatingly difficult, but by the one-month mark, writing had become a sort of lifeline and something I could not live without.
+The summer of 16, I decided to pursue a personal project during which I wrote in my journal for 100 consecutive days.
 
 The posts on this blog are excerpts from my daily writings, either taken word-for-word or slightly edited for content. None of them are intended to be deep or profound, but my hope is that even just one line might resonate some reader out there, sort of as a way to give back to all the writers that pulled me out of my darkest moments, or helped me begin to understand myself and my place in this world.
 
