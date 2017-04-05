@@ -1,39 +1,32 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Leaflet Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<div class="posts">
-  {% for post in paginator.posts %}
-    <article class="post">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  </head>
 
-      <div class="entry">
-        {{ post.content | truncatewords:120 }}
-      </div>
+  <body>
+    <h1>Visualizing Access To and Utilization of Social Services for the Mauritian Marshall Plan on Poverty</h1>
 
-      <!--Only display "READ MORE" if post contains more than 120 words (adapted from https://sacha.me/articles/jekyll-word-counts/)-->
-      {% capture words %}
-        {{ post.content | number_of_words | minus: 120 }}
-      {% endcapture %}
-      {% unless words contains "-" %}
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-      {% endunless %}
-    </article>
-  {% endfor %}
+    <p>Cindy Liu</p>
+    <p>COS Independent Work, Spring 2017</p>
 
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-    {% else %}
-      <span class="previous">Previous</span>
-    {% endif %}
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-    {% else %}
-      <span class="next ">Next</span>
-      {% endif %}
-  </div>
 
-</div>
+    <div id="mapid" style="width: 600px; height: 400px;"></div>
+    <!-- <script>
+
+
+
+    </script>
+
+    <!-- <div id="map" style="width: 800px; height: 440px; border: 1px solid #AAA;"></div>
+
+    <script type='text/javascript' src='maps/markers.json'></script> -->
+    <script type='text/javascript' src='africa.js'></script>
+  </body>
+</html>
